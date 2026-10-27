@@ -1,0 +1,122 @@
+/* Neutral Theme - Clean and Minimalist */
+:root {
+  --bg: #fcfcfc;
+  --fg: #222;
+  --muted: #666;
+  --accent: #005bb7;
+  --border: #ddd;
+  --surface: #fff;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.hero {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0 0 10px;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+section { padding: 40px 0; }
+
+section h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.card h3 { margin: 0 0 10px; font-size: 1.1rem; }
+.card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* Post Styling */
+.post-header {
+  margin-bottom: 30px;
+}
+
+.post-date {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.post-content {
+  line-height: 1.8;
+}
