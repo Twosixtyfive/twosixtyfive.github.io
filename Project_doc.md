@@ -1,34 +1,53 @@
-# Project Documentation: twosixtyfive Site
+# 🤖 AI Agent System Prompt & Project Manual: twosixtyfive
 
-## Architecture
-This site is built using **Jekyll**, a static site generator that is natively supported by GitHub Pages. This allows for "zero-install" deployment—content is pushed as Markdown, and GitHub builds the HTML automatically.
+## 📌 Project Overview
+- **Purpose**: A minimalist, tech and privacy-focused blog/guide platform.
+- **Tech Stack**: Jekyll (Static Site Generator) hosted on GitHub Pages.
+- **Deployment**: Zero-install. GitHub handles the build process upon push to `main`.
+- **Design Philosophy**: Modern Minimalist. Focus on high readability, whitespace, and a clean, professional aesthetic.
 
-## Directory Structure
-- `_config.yml`: Global site settings.
-- `_layouts/`: HTML templates.
-  - `default.html`: The main shell (header, footer, CSS links).
-  - `post.html`: The layout for individual blog posts/guides.
-- `_posts/`: Markdown files for blog entries. Files must follow the naming convention: `YYYY-MM-DD-title.md`.
-- `assets/css/`: Global styles.
-- `index.md`, `about.md`, etc.: Static pages using the `default` layout.
+## 📂 Architecture & Directory Map
+| Path | Description | Agent Action/Note |
+| :--- | :--- | :--- |
+| `_config.yml` | Global site settings | Edit for site-wide variables. |
+| `_layouts/` | HTML Structure | Change `default.html` for shell, `post.html` for content. |
+| `_posts/` | Content Library | **Strict Naming**: `YYYY-MM-DD-title.md`. |
+| `assets/css/` | Visual Layer | Modify `style.css` for theme updates. |
+| `index.md` | Home Page | Uses `default` layout; lists recent posts. |
+| `about.md` | About Page | Static content page. |
+| `blog.md` | Blog Archive | Dynamic list of all `_posts`. |
+| `contact.md` | Contact Page | Static content page. |
 
-## Content Management
-### Adding a New Post/Guide
-1. Create a new file in `_posts/` named `YYYY-MM-DD-your-title.md`.
-2. Add "Front Matter" at the top of the file:
-   ```markdown
+## 🛠️ Operational Instructions
+
+### ✍️ Creating New Content (Blog/Guides)
+To add a new post, the agent **MUST** follow this protocol:
+1. **File Path**: `_posts/YYYY-MM-DD-slug.md` (e.g., `_posts/2026-10-28-vpn-guide.md`).
+2. **Required Front Matter**:
+   ```yaml
    ---
    layout: post
-   title: "Your Title Here"
-   date: 2026-10-27
-   category: tech
+   title: "Human Readable Title"
+   date: YYYY-MM-DD
+   category: [tech | privacy | general]
    ---
    ```
-3. Write your content in Markdown below the front matter.
+3. **Content**: Write in standard GitHub Flavored Markdown.
 
-### Updating the Theme
-- Edit `assets/css/style.css` for global visual changes.
-- Edit `_layouts/default.html` to change the site's overall structure.
+### 🎨 Updating the Visuals
+- **Global Theme**: Edit `assets/css/style.css`.
+- **Layout Changes**: Edit `_layouts/default.html` for header/footer/navigation.
+- **Design Guideline**: Maintain the "Modern Minimalist" look:
+  - High contrast for text.
+  - Generous padding and whitespace.
+  - Soft shadows (`var(--shadow)`) and rounded corners (`var(--radius)`).
 
-## Deployment
-No local build process is required. Simply push changes to the `main` branch on GitHub, and GitHub Pages will automatically trigger a Jekyll build.
+### 🚀 Deployment Workflow
+1. Stage changes: `git add .`
+2. Commit with clear message: `git commit -m "type: description"`
+3. Push to main: `git push origin main`
+
+## ⚠️ Critical Constraints
+- **No Local Dependencies**: Do not suggest installing Ruby or Jekyll locally unless explicitly asked. Rely on GitHub Pages build.
+- **Naming Conventions**: Never deviate from the `YYYY-MM-DD-title.md` format in `_posts/` or the site will fail to build.
+- **Layout Consistency**: Ensure all new static pages in the root use `layout: default` in their front matter.
